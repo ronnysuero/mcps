@@ -1,0 +1,10 @@
+
+.claude/
+
+sqlserver-mcp/node_modules/*
+
+sqlserver-mcp/package-lock.json
+
+sqlserver-mcp/.env
+
+CLAUDE.md

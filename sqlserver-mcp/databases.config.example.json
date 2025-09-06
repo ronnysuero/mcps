@@ -1,0 +1,79 @@
+{
+  "_comment": "Configuración de bases de datos para SQL Server MCP",
+  "_instructions": "1. Copia este archivo como 'databases.config.json', 2. Configura tus bases de datos, 3. El archivo databases.config.json será ignorado por git",
+  
+  "defaultDatabase": "desarrollo",
+  
+  "databases": [
+    {
+      "name": "desarrollo",
+      "description": "Base de datos de desarrollo local",
+      "user": "sa",
+      "password": "dev_password_here", 
+      "server": "localhost",
+      "database": "DevelopmentDB",
+      "port": 1433,
+      "options": {
+        "encrypt": false,
+        "trustServerCertificate": true
+      }
+    },
+    {
+      "name": "testing", 
+      "description": "Base de datos para pruebas automatizadas",
+      "user": "sa",
+      "password": "test_password_here",
+      "server": "test-server.company.com", 
+      "database": "TestingDB",
+      "port": 1433,
+      "options": {
+        "encrypt": false,
+        "trustServerCertificate": true
+      }
+    },
+    {
+      "name": "produccion",
+      "description": "Base de datos de producción (¡Ten cuidado!)",
+      "user": "prod_user",
+      "password": "secure_prod_password", 
+      "server": "prod-server.company.com",
+      "database": "ProductionDB", 
+      "port": 1433,
+      "options": {
+        "encrypt": true,
+        "trustServerCertificate": false
+      }
+    },
+    {
+      "name": "analytics",
+      "description": "Base de datos para análisis y reportes",
+      "user": "analytics_user",
+      "password": "analytics_password",
+      "server": "analytics-server.company.com",
+      "database": "AnalyticsDB",
+      "port": 1433, 
+      "options": {
+        "encrypt": true,
+        "trustServerCertificate": false
+      }
+    }
+  ],
+
+  "_schema_info": {
+    "defaultDatabase": "string - Nombre de la base de datos a usar por defecto",
+    "databases": "array - Lista de configuraciones de bases de datos",
+    "database_object": {
+      "name": "string - Identificador único para la base de datos",
+      "description": "string - Descripción opcional de la base de datos", 
+      "user": "string - Usuario para conectarse",
+      "password": "string - Contraseña del usuario",
+      "server": "string - Hostname o IP del servidor SQL Server",
+      "database": "string - Nombre real de la base de datos en SQL Server", 
+      "port": "number - Puerto de conexión (usualmente 1433)",
+      "options": {
+        "encrypt": "boolean - Usar encriptación TLS",
+        "trustServerCertificate": "boolean - Confiar en certificados autofirmados"
+      }
+    }
+  }
+}
