@@ -1,0 +1,66 @@
+{
+  "_comment": "Configuración de bases de datos para CosmosDB MCP",
+  "_instructions": "1. Copia este archivo como 'databases.config.json', 2. Configura tus bases de datos CosmosDB, 3. El archivo databases.config.json será ignorado por git",
+  
+  "defaultDatabase": "production",
+  
+  "databases": [
+    {
+      "name": "production",
+      "description": "Base de datos de producción principal",
+      "type": "sql",
+      "endpoint": "https://your-cosmos-account.documents.azure.com:443/",
+      "key": "your-primary-key-here",
+      "database": "ProductionDB"
+    },
+    {
+      "name": "development", 
+      "description": "Base de datos de desarrollo",
+      "type": "sql",
+      "endpoint": "https://your-dev-cosmos-account.documents.azure.com:443/",
+      "key": "your-dev-primary-key-here",
+      "database": "DevelopmentDB"
+    },
+    {
+      "name": "analytics",
+      "description": "Base de datos para análisis y reportes",
+      "type": "sql", 
+      "endpoint": "https://your-analytics-cosmos.documents.azure.com:443/",
+      "key": "your-analytics-key-here",
+      "database": "AnalyticsDB"
+    },
+    {
+      "name": "mongodb-example",
+      "description": "Ejemplo de CosmosDB con MongoDB API",
+      "type": "mongodb",
+      "endpoint": "https://your-mongo-cosmos.documents.azure.com:443/",
+      "key": "your-mongo-key-here", 
+      "database": "MongoStyleDB"
+    }
+  ],
+
+  "_schema_info": {
+    "defaultDatabase": "string - Nombre de la base de datos a usar por defecto",
+    "databases": "array - Lista de configuraciones de bases de datos CosmosDB",
+    "database_object": {
+      "name": "string - Identificador único para la base de datos",
+      "description": "string - Descripción opcional de la base de datos",
+      "type": "string - Tipo de API: 'sql' (default), 'mongodb', 'gremlin', 'cassandra', 'table'",
+      "endpoint": "string - URL del endpoint de CosmosDB (ej: https://xxx.documents.azure.com:443/)",
+      "key": "string - Primary key o Secondary key de CosmosDB",
+      "database": "string - Nombre de la base de datos dentro de CosmosDB"
+    }
+  },
+
+  "_cosmos_connection_info": {
+    "where_to_find_endpoint": "Azure Portal > CosmosDB Account > Keys > URI",
+    "where_to_find_key": "Azure Portal > CosmosDB Account > Keys > Primary Key o Secondary Key",
+    "supported_apis": [
+      "sql - CosmosDB SQL API (más común, sintaxis SQL)",
+      "mongodb - CosmosDB MongoDB API (sintaxis MongoDB)",
+      "gremlin - CosmosDB Gremlin API (para grafos)",
+      "cassandra - CosmosDB Cassandra API (wide-column)",
+      "table - CosmosDB Table API (key-value)"
+    ]
+  }
+}

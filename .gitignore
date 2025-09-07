@@ -2,9 +2,9 @@
 .claude/
 
 sqlserver-mcp/node_modules/*
-
 sqlserver-mcp/package-lock.json
 
-sqlserver-mcp/.env
+cosmosdb-mcp/node_modules/*
+cosmosdb-mcp/package-lock.json
 
 CLAUDE.md

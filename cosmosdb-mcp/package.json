@@ -1,0 +1,21 @@
+{
+  "name": "cosmosdb-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for Azure CosmosDB",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "cosmosdb-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mcp", "cosmosdb", "azure", "database", "nosql"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/cosmos": "^4.5.1",
+    "@modelcontextprotocol/sdk": "^1.17.5"
+  }
+}

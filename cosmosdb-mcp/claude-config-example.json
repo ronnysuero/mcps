@@ -1,0 +1,16 @@
+{
+  "_comment": "Configuración para Claude Desktop - CosmosDB MCP",
+  "_instructions": [
+    "1. Ajusta la ruta en 'args' para que coincida con la ubicación de tu proyecto",
+    "2. Configura tus bases de datos CosmosDB en databases.config.json", 
+    "3. Agrega esta configuración a tu claude_desktop_config.json"
+  ],
+  "_note": "Con la configuración JSON, no necesitas variables de entorno aquí!",
+
+  "mcpServers": {
+    "cosmosdb": {
+      "command": "node",
+      "args": ["D:/mcp/cosmosdb-mcp/index.js"]
+    }
+  }
+}
